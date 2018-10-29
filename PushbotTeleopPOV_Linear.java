@@ -94,6 +94,16 @@ public class PushbotTeleopPOV_Linear extends LinearOpMode {
             else
                 robot.mainArm.setPower(0.0);
 
+			
+			
+			if (gamepad2.x)
+                robot.sideArm.setPower(robot.SIDE_ARM_UP);
+            else if (gamepad2.b)
+                robot.sideArm.setPower(robot.SIDE_ARM_DOWN);
+            else
+                robot.sideArm.setPower(0.0);
+			
+			
             // Combine drive and turn for blended motion.
             left  = drive + turn;
             right = drive - turn;
