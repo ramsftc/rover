@@ -96,9 +96,9 @@ public class PushbotTeleopPOV_Linear extends LinearOpMode {
 
 			
 			
-			if (gamepad2.x)
+			if (gamepad2.dpad_up)
                 robot.sideArm.setPower(robot.SIDE_ARM_UP);
-            else if (gamepad2.b)
+            else if (gamepad2.dpad_down)
                 robot.sideArm.setPower(robot.SIDE_ARM_DOWN);
             else
                 robot.sideArm.setPower(0.0);
