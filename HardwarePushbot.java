@@ -62,10 +62,10 @@ public class HardwarePushbot
     //public Servo    rightClaw   = null;
 	
 	
-	public static final double SIDE_ARM_UP       = 0.45;
-    public static final double SIDE_ARM_DOWN     = -.45;
-    public static final double MAIN_ARM_UP       = 0.45;
-    public static final double MAIN_ARM_DOWN     = -.45;
+	public static final double SIDE_ARM_UP       = 0.9;
+    public static final double SIDE_ARM_DOWN     = -.9;
+    public static final double MAIN_ARM_UP       = 0.9;
+    public static final double MAIN_ARM_DOWN     = -.9;
     //public static final double MID_SERVO       =  0.5 ;
     //public static final double ARM_UP_POWER    =  0.45 ;
     //public static final double ARM_DOWN_POWER  = -0.45 ;
