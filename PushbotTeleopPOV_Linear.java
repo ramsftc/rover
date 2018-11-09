@@ -30,6 +30,7 @@
 package org.firstinspires.ftc.robotcontroller.external.samples;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.robot.Robot;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
@@ -66,6 +67,8 @@ public class PushbotTeleopPOV_Linear extends LinearOpMode {
         double turn;
         double max;
 
+        
+
         /* Initialize the hardware variables.
          * The init() method of the hardware class does all the work here
          */
@@ -87,6 +90,7 @@ public class PushbotTeleopPOV_Linear extends LinearOpMode {
             drive = -gamepad1.left_stick_y;
             turn  =  gamepad1.right_stick_x;
             
+        
             if (gamepad2.y)
                 robot.mainArm.setPower(robot.MAIN_ARM_UP);
             else if (gamepad2.a)
@@ -94,16 +98,23 @@ public class PushbotTeleopPOV_Linear extends LinearOpMode {
             else
                 robot.mainArm.setPower(0.0);
 
-			
-			
-			if (gamepad2.dpad_up)
+            
+            
+            if (gamepad2.dpad_down)
                 robot.sideArm.setPower(robot.SIDE_ARM_UP);
-            else if (gamepad2.dpad_down)
+            else if (gamepad2.dpad_up)
                 robot.sideArm.setPower(robot.SIDE_ARM_DOWN);
             else
                 robot.sideArm.setPower(0.0);
-			
-			
+            
+            if (gamepad2.right_bumper)
+                robot.rubberArm.setPower(robot.RUBBER_ARM_DOWN);
+            else if (gamepad2.left_bumper)
+                robot.rubberArm.setPower(robot.RUBBER_ARM_UP);
+            else
+                robot.rubberArm.setPower(0.0);
+                
+            
             // Combine drive and turn for blended motion.
             left  = drive + turn;
             right = drive - turn;
@@ -115,11 +126,13 @@ public class PushbotTeleopPOV_Linear extends LinearOpMode {
                 left /= max;
                 right /= max;
             }
-
+            
             // Output the safe vales to the motor drives.
             robot.leftDrive.setPower(left);
             robot.rightDrive.setPower(right);
 
+            
+            
             /*
             // Use gamepad left & right Bumpers to open and close the claw
             if (gamepad1.right_bumper)
