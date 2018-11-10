@@ -65,8 +65,8 @@ public class HardwarePushbot
     
     public static final double SIDE_ARM_UP       = 1.0;
     public static final double SIDE_ARM_DOWN     = -1.0;
-    public static final double MAIN_ARM_UP       = 0.30;
-    public static final double MAIN_ARM_DOWN     = -0.30;
+    public static final double MAIN_ARM_UP       = 0.50;
+    public static final double MAIN_ARM_DOWN     = -0.50;
     public static final double RUBBER_ARM_UP     = .45;
     public static final double RUBBER_ARM_DOWN   = -.45;
     //public static final double MID_SERVO       =  0.5 ;
